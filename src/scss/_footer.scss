@@ -1,0 +1,128 @@
+.footer {
+
+	flex: 0 0 auto;
+
+	width: 100%;
+	height: 100%;
+	
+	background-color: #030303;
+
+	will-change: transform;
+
+	@include bp($point_2, min) {
+		padding: 5% 5rem 5rem;
+		max-height: 60vh;
+	}
+	
+	@include bp($point_2) {
+		max-height: 40vh;
+		padding: 10rem 2rem 2rem;
+
+		@include flex_block(row, nowrap, flex-start);
+	}
+
+	@include bp($point_4) {
+		justify-content: center;
+	}
+}
+
+.footer_inner {
+	@include bp($point_2, min) {
+		display: flex;
+		justify-content: space-between;
+		height: 100%;
+
+	}
+
+	@include bp($point_2) {
+		margin: auto 0;
+		height: fit-content;
+	}
+	
+}
+
+.footer_content {
+	@extend %global_flex_block_row_nowrap_flex-start;
+	
+	margin-right: 2rem;
+	
+	@include bp($point_2, min) {
+		flex-direction: column;
+		max-width: 42rem;
+	}
+
+	@include bp($point_2) {
+		align-items: center;
+		margin-bottom: 3rem;
+	}
+
+	@include bp($point_4) {
+		flex-direction: column;
+		margin-bottom: 3rem;
+		max-width: 50rem;
+	}
+
+	& .section_title {
+		width: 100%;
+		color: $white;
+		margin-right: 1rem;
+	}
+
+	& .section_descr {
+	
+		color: $white;
+
+		@include bp($point_2, min) {
+			margin-top: auto;
+		}
+
+		@include bp($point_4) {
+			text-align: center;
+		}
+	}
+}
+
+.footer_form {
+	@extend %global_flex_block_row_nowrap_space_between_flex-end;
+	
+	max-width: 52rem;
+	width: 100%;
+
+	@include bp($point_2) {
+		margin: 0 auto;
+		justify-content: center;
+	}
+}
+
+.footer_form__input {
+	width: 100%;
+
+	margin-right: 6rem;
+	@include bp($point_6, min) {
+		max-width: 32rem;
+	}
+	
+	@include bp($point_6) {
+		max-width: 28rem;
+	}
+}
+
+.footer_form__input_email {
+	width: 100%;
+	
+	font-size: 1.6rem;
+	line-height: 2.6rem;
+	color: $white;
+
+	background-color: transparent;
+	border: 0;
+	border-bottom: 1px solid rgba($white, 0.3);
+
+	&::placeholder {
+		color: $white;
+	}
+
+	&:focus {
+		border-color:white;
+	}
+}

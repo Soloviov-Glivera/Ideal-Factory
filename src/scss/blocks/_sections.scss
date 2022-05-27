@@ -1,0 +1,154 @@
+//---------------------------------------------sections
+.section {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+
+	font-size: 1rem;
+
+	//remove this demo style
+	&.demo_mod {
+		@extend %global_flex_block_row_nowrap_center_center;
+
+		height: calc(100vh - (var(--height-footer) + var(--height-header)));
+
+		font-size: 4rem;
+		color: $white;
+		text-align: center;
+
+		background-color: $black;
+	}
+}
+
+.section_in {
+	max-width: $page_width;
+	width: 100%;
+	height: inherit;
+	margin: 0 auto;
+}
+
+//section elements
+
+.section_wrapper {
+	@extend %global_flex_block_row_nowrap_space_between_stretch;
+
+	position: relative;
+	
+	height: inherit;
+
+	@include bp($point_4) {
+		flex-direction: column-reverse;
+	}
+}
+
+.section_logo{
+	position: absolute;
+
+	width: 3.5rem;
+	height: 3.5rem;
+	
+	@include bp($point_1, min) {
+		top: 5rem;
+		left: 5rem;
+	}
+
+	@include bp($point_1) {
+		top: 2rem;
+		left: 2rem;
+	}
+	
+	&.section_logo--mod_color_1{
+		color: $black;
+	}
+	&.section_logo--mod_color_2{
+		color: $white;
+	}
+}
+
+.section_content {
+	@extend %global_flex_block_column_nowrap_flex-start;
+
+	@include bp($point_2, min) {
+		flex-basis: 66.66%;
+	}
+
+	@include bp($point_2) {
+		flex-basis: 50%;
+	}
+
+	@include bp($point_4) {
+		height: 50%;
+	}
+}
+
+.section_photo {
+	height: 100vh;
+
+	@include bp($point_2, min) {
+		flex-basis: 33.33%;
+	}
+
+	@include bp($point_4, min) {
+		flex-basis: 50%;
+	}
+
+	@include bp($point_4) {
+		height: 50%;
+	}
+}
+
+.section_title {
+	@extend %global_flex_block_row_nowrap_flex-start;
+	
+	margin: auto 0;
+	font-weight: 500;
+	font-size: 6rem;
+	line-height: 7.4rem;
+
+	@include bp($point_2) {
+		text-align: center;
+	}
+
+	&.section_title--mod_size_1 { 
+		font-size: 5rem;
+		line-height: 6rem;
+	}
+	&.section_title--mod_size_2 { 
+		font-size: 4rem;
+		line-height: 5rem;
+	}
+
+}
+.section_title--mod_mark {
+	font-size: 1.4rem;
+	margin-top: auto;
+	line-height: 1.4rem;
+	margin-bottom: 6rem;
+}
+
+.section_descr_caption {
+	font-weight: 500;
+	font-size: 2.4rem;
+	line-height: 3.4rem;
+	color: #FFFFFF;
+	margin-bottom: 6rem;
+}
+
+.section_descr {
+	line-height: 2.4rem;
+	font-size: 1.4rem;
+}
+
+.section_dragble {
+
+	@include bp($point_2, min) {
+		&.multi_swiper_inner {
+			cursor: grab;
+		}
+
+		cursor: grab;
+		&:active {
+			cursor: grabbing;
+		}
+	}
+}

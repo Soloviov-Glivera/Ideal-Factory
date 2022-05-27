@@ -1,0 +1,10 @@
+mixin multi_slide(array)
+	each item in array
+		a(href='#').multi_slide.swiper-slide 
+			.multi_slide__in 
+				.multi_slide_blur
+					img(src= item.img).multi_slide_blur__img.cover_img
+				.multi_slide__photo 		
+					img(src= item.img).cover_img
+				h5.multi_slide__title.section_title.section_title--mod_size_2!= item.title
+				p.multi_slide__descr.section_descr!= item.descr

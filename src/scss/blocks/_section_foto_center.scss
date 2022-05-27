@@ -1,0 +1,58 @@
+.section_img_center__wrapper {
+	@include bp($point_2) {
+		flex-direction: column;
+	}
+
+	& .section_photo {
+		@include bp($point_2) {
+			height: 33.33%;
+		}
+	}
+}
+
+.section_img_center__caption {
+	font-size: 2.4rem;
+	line-height: 3.4rem;
+	font-weight: 500;
+	color: $white;
+
+	@include bp($point_2) {
+		margin-top: auto;
+	}
+}
+
+.section_img_center__content {
+	justify-content: flex-end;
+	flex-basis: 33.33%;
+	
+	background-color: $black;
+	
+	@include bp($point_1, min) {
+		padding: 5rem 5rem 6.4rem;
+	}
+	@include bp($point_1) {
+		padding: 2rem 2rem 4.4rem;
+	}
+	@include bp($point_2) {
+		height: 33.33%;
+	}
+ 	& .section_descr {
+		color: $white;
+		@include bp($point_2){
+			margin: auto auto;
+		}
+	}
+
+	& .section_title {
+		color: $white;
+		
+		@include bp($point_2, min) {
+			max-width: 44rem;
+		}
+
+		@include bp($point_2) {
+			max-width: 100%;
+			margin: auto auto;
+		}
+	}
+}

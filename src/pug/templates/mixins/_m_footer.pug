@@ -1,0 +1,17 @@
+mixin footer(array)
+	footer.footer
+		.footer_inner 			
+			.footer_content
+				each item in array
+					.section_title.section_title--mod_size_2!= item.title 
+					p.section_descr!= item.descr
+			form.footer_form(action="")
+				+form_input({
+					block_class: 'footer_form__input',
+					field_class: 'footer_form__field',
+					class:'footer_form__input_email',
+					placeholder:'Email',
+					type: 'email'
+				})
+				button.footer_form__btn_submit.main_btn(type='submit') Sign up
+

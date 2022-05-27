@@ -1,0 +1,75 @@
+.section_scrollbar_in {
+	@extend %global_flex_block_row_nowrap_flex-start;
+}
+
+.scrollbar_swiper {
+	@extend %global_flex_block_row_wrap_center_center;
+
+	position: relative;
+	
+	max-height: 60vh;
+
+	padding-bottom: 6rem;
+	margin: auto 0 auto;
+
+	@include bp($point_1, min) {
+		margin-left: 12rem;
+	}
+	@include bp($point_1) {
+		margin-left: 5rem;
+	}
+
+	& .swiper-scrollbar {
+		//перебивают стили swiper
+
+		left: 0!important;
+		width: 90%!important;
+		background-color: #E3E3E3;
+	}
+	& .swiper-scrollbar-drag {
+		width: 35rem;
+		background-color: #657DE9;
+		
+	}
+}
+
+.scrollbar_slide {
+	height: inherit;
+	margin-right: 20px;
+
+	&:nth-child(even) {
+		
+		@include bp($point_2, min) {
+			max-width: 439px;
+		}
+
+		@include bp($point_5, min) {
+			max-width: 280px;
+		}
+
+		@include bp($point_5) {
+			max-width: 150px;
+		}
+	}
+
+	&:nth-child(odd) {
+
+		@include bp($point_2, min) {
+			max-width: 746px;
+		}
+		@include bp($point_5, min) {
+			max-width: 450px;
+		}
+		@include bp($point_5) {
+			max-width: 300px;
+		}
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.scrollbar_slide__photo {
+	height: 100%;
+}

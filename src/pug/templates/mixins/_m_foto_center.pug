@@ -1,0 +1,14 @@
+mixin foto_center(array)
+	each item in array
+		.section_wrapper(class= item.slide_class)
+			.section_content.section_img_center__content
+				h2.section_title.section_title--mod_size_1!= item.title
+			.section_photo
+				img(src= item.img).cover_img
+			.section_content.section_img_center__content
+				if item.descr_caption
+					.section_img_center__caption!= item.descr_caption
+				.section_descr!= item.descr
+			if item.logo_mod 
+				a(href='#').section_logo(class = item.logo_mod)
+					+icon('logo', `icon--size_mod`)

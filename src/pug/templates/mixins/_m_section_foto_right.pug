@@ -1,0 +1,13 @@
+mixin section_foto_right(array)
+	section.section 
+		.section_in
+			each item in array
+				.section_wrapper 
+					.section_content.section_img_right__content
+						h2.section_title!= item.title
+						p.section_descr!= item.descr
+					.section_photo
+						img(src= item.img).cover_img
+				if item.logo_mod 
+					a(href='#').section_logo(class = item.logo_mod)
+						+icon('logo', `icon--size_mod`)

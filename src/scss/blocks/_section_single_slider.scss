@@ -1,0 +1,10 @@
+.single_inner {
+	& .section_img_center__content {
+		@include bp($point_2, min) {
+			padding-bottom: 10%;
+		}
+		@include bp($point_2) {
+			padding-bottom: 5%;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+mixin section_foto_left(array)
+	section.section 
+		.section_in
+			each item in array
+				.section_wrapper.section_img_left__wrapper
+					.section_photo
+							img(src= item.img).cover_img
+					.section_content.section_img_left__content
+						h2.section_title!= item.title
+						p.section_descr!= item.descr

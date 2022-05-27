@@ -1,0 +1,35 @@
+.section_img_left__wrapper {
+
+	@include bp($point_4) {
+		flex-direction: column;
+	}
+}
+.section_img_left__content {
+
+	@include bp($point_1, min) {
+		padding: 15rem 15rem 5rem 10rem;
+	}
+	@include bp($point_1) {
+		padding: 5rem 5rem 2rem 5rem;
+	}
+
+	@include bp($point_4) {
+		align-items: center;
+	}
+ 	
+	& .section_title {
+		margin-top: auto;
+		margin-bottom: 0;
+		@include bp($point_4, min) {
+			max-width: 46rem;
+		}
+	}
+	& .section_descr {
+		margin-top: auto;
+
+		@include bp($point_4, min) {
+			max-width: 44rem;
+			margin-left: auto;
+		}
+	}
+}

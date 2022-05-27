@@ -1,0 +1,33 @@
+.section_img_right__content {
+
+	@include bp($point_1, min) {
+		padding: 5rem;
+	}
+	@include bp($point_1) {
+		padding: 2rem;
+	}
+		
+	@include bp($point_4) {
+		align-items: center;
+	}
+
+	& .section_title {
+		@include bp($point_4, min) {
+			max-width: 74.6rem;
+		}
+		@include bp($point_4) {
+			max-width: 100%;
+		}
+	}
+
+	& .section_descr {
+
+		@include bp($point_4, min) {
+			max-width: 46rem;
+		}
+
+		@include bp($point_4) {
+			max-width: 100%;
+		}
+	}
+}
