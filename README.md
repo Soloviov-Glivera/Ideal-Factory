@@ -84,3 +84,4 @@ readme.md                    # Documentation template
 | JS component (js/components)  | nameOfYourFunction.js | *name of function*  |
 
 # Ideal-Factory
+# Ideal-Factory
