@@ -125,7 +125,7 @@
 	&.swiper-button-prev {
 		margin-right: 4rem;
 	}
-	@include bp($point_2, min){
+	@include bp($point_2, min) {
 		&:hover{
 			background-color: darken($btn_bg, 10%);
 		}

@@ -20,7 +20,6 @@ Thumbs.db
 npm-debug.log
 
 node_modules/
-dist/
 build/
 source/
 wp_files/wp-content/themes/mytheme/assets
