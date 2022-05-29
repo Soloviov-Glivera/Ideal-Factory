@@ -153,3 +153,20 @@
 		opacity: 0;
 	}
 }
+
+.data{
+	position: fixed;
+	top: 0;
+	left: 0;
+	color: $white;
+	// height: px;
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	width: 150px;
+	font-size: 10px;
+	// display: flex;
+	// align-items: center;
+	padding: 1rem 1rem;
+	z-index: 1000;
+}

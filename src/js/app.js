@@ -10,6 +10,7 @@ import singleSlider from './components/single_swiper';
 
 // ------------------  import components
 import scrollToNext from './components/scrollToNext';
+import dataFile from './components/dataFile';
 // ------------------  import components###
 
 window.jQuery = $;
