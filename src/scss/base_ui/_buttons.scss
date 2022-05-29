@@ -154,6 +154,20 @@
 	}
 }
 
+.line {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 1px;
+}
+#lineGreen {
+	background-color: green;
+}
+
+#lineRed {
+	background-color: red;
+	left: 51%;
+}
 .data{
 	position: fixed;
 	top: 0;

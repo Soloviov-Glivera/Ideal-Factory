@@ -113,6 +113,8 @@ function update() {
     scrollHeightSec: heightSec.scrollHeight
   });
   dataEl.innerHTML = "<div>".concat(JSON.stringify(data, null, 2), "</div>");
+  document.getElementById('lineGreen').style.height = "".concat(document.documentElement.clientHeight, "px");
+  document.getElementById('lineRed').style.height = "".concat(heightSec.clientHeight, "px");
 }
 
 update();

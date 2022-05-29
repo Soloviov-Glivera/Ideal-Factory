@@ -15,6 +15,8 @@ function update() {
 		scrollHeightSec: heightSec.scrollHeight,
 	});
 	dataEl.innerHTML = `<div>${JSON.stringify(data, null, 2)}</div>`;
+	document.getElementById('lineGreen').style.height = `${document.documentElement.clientHeight}px`;
+	document.getElementById('lineRed').style.height = `${heightSec.clientHeight}px`;
 }
 
 update();
