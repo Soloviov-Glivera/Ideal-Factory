@@ -3,10 +3,8 @@
 	position: relative;
 	width: 100%;
 	height: 100vh;
-
+	min-height: -webkit-fill-available;
 	font-size: 1rem;
-
-	//remove this demo style
 	&.demo_mod {
 		@extend %global_flex_block_row_nowrap_center_center;
 
