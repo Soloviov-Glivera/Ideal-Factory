@@ -1,7 +1,7 @@
 const scrollBtn = document.querySelector('.scrollBtn');
 const arrayOfSections = document.querySelectorAll('.section');
 let currentPos = 0;
-let heightSection = Math.ceil(window.innerHeight);
+let heightSection = Math.ceil(document.documentElement.clientHeight);
 let diffPos;
 let scrollCord;
 let posOfSections = [];

@@ -178,7 +178,7 @@ dragBtn.addEventListener('click', function () {
 var scrollBtn = document.querySelector('.scrollBtn');
 var arrayOfSections = document.querySelectorAll('.section');
 var currentPos = 0;
-var heightSection = Math.ceil(window.innerHeight);
+var heightSection = Math.ceil(document.documentElement.clientHeight);
 var diffPos;
 var scrollCord;
 var posOfSections = [];
