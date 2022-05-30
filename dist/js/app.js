@@ -463,8 +463,8 @@ var calcViewportHeight = function calcViewportHeight() {
   var isSeven = isMobileData.seven_inch;
 
   if (isApple || isAndroid || isSeven) {
-    var vh = window.innerHeight * 0.01;
-    console.log(vh);
+    var vh = window.innerHeight * 0.01; // console.log(vh);
+
     document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
   }
 };

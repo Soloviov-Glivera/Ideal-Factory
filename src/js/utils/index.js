@@ -34,7 +34,7 @@ export const calcViewportHeight = () => {
 
 	if (isApple || isAndroid || isSeven) {
 		const vh = window.innerHeight * 0.01;
-		console.log(vh);
+		// console.log(vh);
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 	}
 };
