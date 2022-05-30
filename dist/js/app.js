@@ -41,8 +41,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_single_swiper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/single_swiper */ "./src/js/components/single_swiper.js");
 /* harmony import */ var _components_scrollToNext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/scrollToNext */ "./src/js/components/scrollToNext.js");
 /* harmony import */ var _components_scrollToNext__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_scrollToNext__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _components_dataFile__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/dataFile */ "./src/js/components/dataFile.js");
-/* harmony import */ var _components_dataFile__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_components_dataFile__WEBPACK_IMPORTED_MODULE_8__);
 /* provided dependency */ var __webpack_provided_window_dot_jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* provided dependency */ var __webpack_provided_window_dot_$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 // ------------------- imports
@@ -54,7 +52,6 @@ __webpack_require__.r(__webpack_exports__);
 
  // ------------------- imports###
 // ------------------  import components
-
 
  // ------------------  import components###
 
@@ -86,38 +83,6 @@ var loadFunc = function loadFunc() {
 (0,utils__WEBPACK_IMPORTED_MODULE_2__.pageLoad)(function () {
   loadFunc();
 });
-
-/***/ }),
-
-/***/ "./src/js/components/dataFile.js":
-/*!***************************************!*\
-  !*** ./src/js/components/dataFile.js ***!
-  \***************************************/
-/***/ (() => {
-
-var dataEl = document.querySelector('.data');
-var data = {};
-var heightSec = document.querySelector('.section');
-
-function update() {
-  Object.assign(data, {
-    htmlClientHeight: document.documentElement.clientHeight,
-    bodyClientHeight: document.body.clientHeight,
-    bodyPageHeight: document.body.pageHeight,
-    screenHeight: window.screen.height,
-    screenAvailHeight: window.screen.availHeight,
-    windowInnerHeight: window.innerHeight,
-    windowOuterHeight: window.outerHeight,
-    windowDevicePixelRatio: window.devicePixelRatio,
-    clientHeightSec: heightSec.clientHeight,
-    scrollHeightSec: heightSec.scrollHeight
-  });
-  dataEl.innerHTML = "<div>".concat(JSON.stringify(data, null, 2), "</div>");
-  document.getElementById('lineGreen').style.height = "".concat(document.documentElement.clientHeight, "px");
-  document.getElementById('lineRed').style.height = "".concat(heightSec.clientHeight, "px");
-}
-
-update();
 
 /***/ }),
 
@@ -497,8 +462,8 @@ var calcViewportHeight = function calcViewportHeight() {
   var isSeven = isMobileData.seven_inch;
 
   if (isApple || isAndroid || isSeven) {
-    var vh = window.innerHeight * 0.01; // console.log(vh);
-
+    var vh = window.innerHeight * 0.01;
+    console.log(vh);
     document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
   }
 };

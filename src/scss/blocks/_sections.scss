@@ -85,7 +85,7 @@
 		flex-basis: 33.33%;
 	}
 
-	@include bp($point_4, min) {
+	@include bp($point_2) {
 		flex-basis: 50%;
 	}
 
