@@ -9,7 +9,9 @@ block project_vars
 doctype
 html(lang="en")
 	head
-		+head(array)
+		+head({
+			title_inner: 'Ideal Factory'
+		})
 	body(class= array.body_class)
 		.wrapper(class= array.layout_mod)
 			.base(class= array.layout_mod)

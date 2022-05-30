@@ -68,8 +68,7 @@
 
 	&.swiper-button-next,
 	&.swiper-button-prev {
-		width: 2rem;
-		height: 2rem;
+
 		
 		padding: .6rem;
 		
@@ -77,6 +76,16 @@
 
 		background-color: $white;
 		border-radius: 50%;
+	}
+
+	@include bp($point_2, min){
+		width: 2rem!important;
+		height: 2rem!important;
+	}
+
+	@include bp($point_2){
+		width: 3rem!important;
+		height: 3rem!important;
 	}
 
 	@include bp($point_2, min){
@@ -88,7 +97,6 @@
 
 .swiper-button-drag {
 	z-index: 5;
-	padding: 1rem 2rem;
 	background-color: $white;
 	border-radius: 10rem;
 	margin: 0 .6rem;
@@ -103,9 +111,15 @@
 	}
 
 	@include bp($point_2, min) {
+		padding: 1rem 2rem;
+
 		&:hover{
 			background-color: darken($white, 15%);
 		}
+	}
+
+	@include bp($point_2) {
+		padding: 1.5rem 2.5rem;
 	}
 }
 .arrow_single_prev,
@@ -143,7 +157,7 @@
 		bottom: 5rem;
 		left: 5rem;
 	}
-	
+
 	@include bp($point_2) {
 		bottom: 3rem;
 		left: 2rem;
