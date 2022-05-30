@@ -141,45 +141,39 @@ dragBtn.addEventListener('click', function () {
   \*******************************************/
 /***/ (() => {
 
-var scrollBtn = document.querySelector('.scrollBtn');
-var arrayOfSections = document.querySelectorAll('.section');
-var currentPos = 0;
-var heightSection = Math.ceil(document.documentElement.clientHeight);
-var diffPos;
-var scrollCord;
-var posOfSections = [];
-
-var scrollToNext = function scrollToNext() {
-  console.clear();
-  currentPos = Math.ceil(window.pageYOffset);
-  diffPos = Math.abs(currentPos - heightSection);
-
-  if (currentPos === 0) {
-    scrollCord = diffPos;
-  } else {
-    scrollCord = Math.abs(currentPos + heightSection - currentPos % heightSection);
-  }
-
-  window.scrollTo({
-    top: scrollCord,
-    behavior: 'smooth'
-  });
-};
-
-var hideScrollBtn = function hideScrollBtn() {
-  currentPos = window.pageYOffset;
-
-  if (document.body.scrollHeight <= currentPos + heightSection) {
-    scrollBtn.classList.add('scroll_btn--hide');
-  } else {
-    scrollBtn.classList.remove('scroll_btn--hide');
-  }
-};
-
-window.addEventListener('scroll', hideScrollBtn);
-scrollBtn.addEventListener('click', function () {
-  scrollToNext();
-});
+// const scrollBtn = document.querySelector('.scrollBtn');
+// const arrayOfSections = document.querySelectorAll('.section');
+// let currentPos = 0;
+// let heightSection = Math.ceil(document.documentElement.clientHeight);
+// let diffPos;
+// let scrollCord;
+// let posOfSections = [];
+// const scrollToNext = () => {
+// 	console.clear();
+// 	currentPos = Math.ceil(window.pageYOffset);
+// 	diffPos = Math.abs(currentPos - heightSection);
+// 	if (currentPos === 0) {
+// 		scrollCord = diffPos;
+// 	} else {
+// 		scrollCord = Math.abs((currentPos + heightSection) - (currentPos % heightSection));
+// 	}
+// 	window.scrollTo({
+// 		top: scrollCord,
+// 		behavior: 'smooth',
+// 	});
+// };
+// const hideScrollBtn = () => {
+// 	currentPos = window.pageYOffset;
+// 	if (document.body.scrollHeight <= currentPos + heightSection) {
+// 		scrollBtn.classList.add('scroll_btn--hide');
+// 	} else {
+// 		scrollBtn.classList.remove('scroll_btn--hide');
+// 	}
+// };
+// window.addEventListener('scroll', hideScrollBtn);
+// scrollBtn.addEventListener('click', () => {
+// 	scrollToNext();
+// });
 
 /***/ }),
 
