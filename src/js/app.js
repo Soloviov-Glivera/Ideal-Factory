@@ -1,7 +1,12 @@
 // ------------------- imports
 import $ from 'jquery';
 import { GLOBAL_VARS } from 'utils/constants';
-import { documentReady, pageLoad } from 'utils';
+import {
+	documentReady,
+	pageLoad,
+	onWindowResize,
+	calcViewportHeight,
+} from 'utils';
 import pageWidgetInit from './dev_vendors/dev_widget';
 import multiSlider from './components/multi_swiper';
 import scrollbarSlider from './components/scrollbar_swiper';
@@ -34,6 +39,7 @@ const readyFunc = () => {
 };
 
 const loadFunc = () => {
+	onWindowResize(calcViewportHeight);
 	console.log('page load');
 };
 

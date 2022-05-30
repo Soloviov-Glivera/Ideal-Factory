@@ -74,6 +74,7 @@ var readyFunc = function readyFunc() {
 };
 
 var loadFunc = function loadFunc() {
+  (0,utils__WEBPACK_IMPORTED_MODULE_2__.onWindowResize)(utils__WEBPACK_IMPORTED_MODULE_2__.calcViewportHeight);
   console.log('page load');
 };
 
