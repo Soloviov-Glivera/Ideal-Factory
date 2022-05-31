@@ -2,7 +2,8 @@
 .section {
 	position: relative;
 	width: 100%;
-	height: var(--full-screen);
+	// height: var(--full-screen);
+	height: 100vh;
 	font-size: 1rem;
 	&.demo_mod {
 		@extend %global_flex_block_row_nowrap_center_center;
