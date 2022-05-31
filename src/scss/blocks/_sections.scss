@@ -2,7 +2,7 @@
 .section {
 	position: relative;
 	width: 100%;
-	// height: var(--full-screen);
+	height: var(--full-screen);
 	height: 100vh;
 	font-size: 1rem;
 	&.demo_mod {
@@ -39,7 +39,7 @@
 	}
 }
 
-.section_logo{
+.section_logo {
 	position: absolute;
 
 	width: 3.5rem;
@@ -55,10 +55,10 @@
 		left: 2rem;
 	}
 	
-	&.section_logo--mod_color_1{
+	&.section_logo--mod_color_1 {
 		color: $black;
 	}
-	&.section_logo--mod_color_2{
+	&.section_logo--mod_color_2 {
 		color: $white;
 	}
 }
@@ -80,7 +80,7 @@
 }
 
 .section_photo {
-	// height: var(--full-screen);
+	height: var(--full-screen);
 
 	@include bp($point_2, min) {
 		flex-basis: 33.33%;

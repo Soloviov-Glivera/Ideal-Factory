@@ -38,7 +38,7 @@
 	}
  	& .section_descr {
 		color: $white;
-		@include bp($point_2){
+		@include bp($point_2) {
 			margin: auto auto;
 		}
 	}
