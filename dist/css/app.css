@@ -608,7 +608,6 @@ a:hover, a:focus {
   position: relative;
   width: 100%;
   height: var(--full-screen);
-  height: 100vh;
   font-size: 1rem;
 }
 .section.demo_mod {
