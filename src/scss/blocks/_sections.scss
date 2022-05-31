@@ -79,7 +79,7 @@
 }
 
 .section_photo {
-	height: var(--full-screen);
+	// height: var(--full-screen);
 
 	@include bp($point_2, min) {
 		flex-basis: 33.33%;

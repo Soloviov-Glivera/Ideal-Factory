@@ -675,9 +675,6 @@ a:hover, a:focus {
   }
 }
 
-.section_photo {
-  height: var(--full-screen);
-}
 @media screen and (min-width: 1024px) {
   .section_photo {
     flex-basis: 33.33%;
