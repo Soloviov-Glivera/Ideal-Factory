@@ -25,6 +25,11 @@
 	@extend %global_flex_block_row_nowrap_flex-start_center;	
 
 	position: absolute;
+	
+	& .swiper-button-drag {
+		position: static;
+		opacity: 1;
+	}
 
 	.multi_swiper & {
 		bottom: 20%;
@@ -63,6 +68,8 @@
 	}
 }
 
+
+
 .arrow_multi_prev,
 .arrow_multi_next {
 
@@ -88,27 +95,32 @@
 		height: 3rem!important;
 	}
 
-	@include bp($point_2, min){
+	@include bp($point_2, min) {
 		&:hover{
 			background-color: darken($white, 20%);
 		}
 	}
+
+	@include bp ($point_2) {
+		&.swiper-button-prev {
+			margin-right: 7rem;
+		}
+	}
 }
 
+
 .swiper-button-drag {
-	z-index: 5;
-	background-color: $white;
-	border-radius: 10rem;
+	position: absolute;
+	z-index: 101;
 	margin: 0 .6rem;
 	font-size: 1.4rem;
+	background-color: $white;
+	border-radius: 10rem;
+	opacity: 0;
 	cursor: pointer;
-	transition: .3s ease-in-out;
+	pointer-events: none;
 
-	&.dragBtn,
-	&:active{
-		transform: scale(0.9);
-		box-shadow: inset .4rem 1rem 2rem rgba(0, 0, 0, .3);
-	}
+	transition: 0;
 
 	@include bp($point_2, min) {
 		padding: 1rem 2rem;
@@ -117,11 +129,21 @@
 			background-color: darken($white, 15%);
 		}
 	}
-
+	@include bp($point_2) {
+		display: none;
+	}
+	&.swiper-button-drag--opas_mod_1 {
+		opacity: 1;
+	}
+	&.swiper-button-drag--disable {
+		opacity: 0;
+	}
 	@include bp($point_2) {
 		padding: 1.5rem 2.5rem;
 	}
 }
+
+
 .arrow_single_prev,
 .arrow_single_next {
 

@@ -734,18 +734,6 @@ a:hover, a:focus {
   font-size: 1.4rem;
 }
 
-@media screen and (min-width: 1024px) {
-  .section_dragble {
-    cursor: grab;
-  }
-  .section_dragble.multi_swiper_inner {
-    cursor: grab;
-  }
-  .section_dragble:active {
-    cursor: grabbing;
-  }
-}
-
 @media screen and (min-width: 1200px) {
   .section_img_right__content {
     padding: 5rem;
@@ -888,8 +876,8 @@ a:hover, a:focus {
   }
 }
 
-.multi_swiper_inner {
-  cursor: pointer;
+.multi_swiper {
+  position: relative;
 }
 
 .multi_slide {
@@ -897,18 +885,11 @@ a:hover, a:focus {
   width: 101%;
   height: inherit;
   overflow: hidden;
-  cursor: inherit;
+  cursor: none;
 }
-@media screen and (min-width: 1024px) {
-  .multi_slide:hover {
-    text-decoration: none;
-  }
-  .multi_slide:hover .multi_slide_blur {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  .multi_slide:hover .multi_slide__photo {
-    transform: scale(1.05);
+@media screen and (max-width: 1024px) {
+  .multi_slide {
+    cursor: pointer;
   }
 }
 
@@ -1059,6 +1040,10 @@ a:hover, a:focus {
 .swiper-buttons-block {
   position: absolute;
 }
+.swiper-buttons-block .swiper-button-drag {
+  position: static;
+  opacity: 1;
+}
 .multi_swiper .swiper-buttons-block {
   bottom: 20%;
   right: 30%;
@@ -1116,19 +1101,24 @@ a:hover, a:focus {
     background-color: #cccccc;
   }
 }
+@media screen and (max-width: 1024px) {
+  .arrow_multi_prev.swiper-button-prev,
+.arrow_multi_next.swiper-button-prev {
+    margin-right: 7rem;
+  }
+}
 
 .swiper-button-drag {
-  z-index: 5;
-  background-color: #fff;
-  border-radius: 10rem;
+  position: absolute;
+  z-index: 101;
   margin: 0 0.6rem;
   font-size: 1.4rem;
+  background-color: #fff;
+  border-radius: 10rem;
+  opacity: 0;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-.swiper-button-drag.dragBtn, .swiper-button-drag:active {
-  transform: scale(0.9);
-  box-shadow: inset 0.4rem 1rem 2rem rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  transition: 0;
 }
 @media screen and (min-width: 1024px) {
   .swiper-button-drag {
@@ -1137,6 +1127,17 @@ a:hover, a:focus {
   .swiper-button-drag:hover {
     background-color: #d9d9d9;
   }
+}
+@media screen and (max-width: 1024px) {
+  .swiper-button-drag {
+    display: none;
+  }
+}
+.swiper-button-drag.swiper-button-drag--opas_mod_1 {
+  opacity: 1;
+}
+.swiper-button-drag.swiper-button-drag--disable {
+  opacity: 0;
 }
 @media screen and (max-width: 1024px) {
   .swiper-button-drag {

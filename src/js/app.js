@@ -8,13 +8,14 @@ import {
 	calcViewportHeight,
 } from 'utils';
 import pageWidgetInit from './dev_vendors/dev_widget';
-import multiSlider from './components/multi_swiper';
-import scrollbarSlider from './components/scrollbar_swiper';
-import singleSlider from './components/single_swiper';
 // ------------------- imports###
 
 // ------------------  import components
+import multiSlider from './components/multi_swiper';
+import scrollbarSlider from './components/scrollbar_swiper';
+import singleSlider from './components/single_swiper';
 import scrollToNext from './components/scrollToNext';
+import cursor from './components/cursor';
 // ------------------  import components###
 
 window.jQuery = $;

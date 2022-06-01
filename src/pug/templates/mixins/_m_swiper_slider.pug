@@ -1,10 +1,12 @@
 mixin swiper_slider(array)
 	.swiper-container(class= array.slider_class)
+		if array.btns_drag
+			.swiper-button-drag.cursorDrag Drag
 		.swiper-buttons-block
 			if array.btns_drag
 				.swiper-button-prev.arrow_multi_prev
 					+icon('arrow_prev_multi_slider')
-				.swiper-button-drag Drag
+				.swiper-button-drag.btnDrag Drag
 				.swiper-button-next.arrow_multi_next
 					+icon('arrow_next_multi_slider')
 			if array.btns 

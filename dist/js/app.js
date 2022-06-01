@@ -41,17 +41,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_single_swiper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/single_swiper */ "./src/js/components/single_swiper.js");
 /* harmony import */ var _components_scrollToNext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/scrollToNext */ "./src/js/components/scrollToNext.js");
 /* harmony import */ var _components_scrollToNext__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_scrollToNext__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_cursor__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/cursor */ "./src/js/components/cursor.js");
+/* harmony import */ var _components_cursor__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_components_cursor__WEBPACK_IMPORTED_MODULE_8__);
 /* provided dependency */ var __webpack_provided_window_dot_jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* provided dependency */ var __webpack_provided_window_dot_$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 // ------------------- imports
 
 
 
-
-
-
  // ------------------- imports###
 // ------------------  import components
+
+
+
+
 
  // ------------------  import components###
 
@@ -87,6 +90,34 @@ var loadFunc = function loadFunc() {
 
 /***/ }),
 
+/***/ "./src/js/components/cursor.js":
+/*!*************************************!*\
+  !*** ./src/js/components/cursor.js ***!
+  \*************************************/
+/***/ (() => {
+
+var multiSliderContainer = document.querySelector('.multiSliderWrapper');
+var cursorDrag = document.querySelector('.cursorDrag');
+var btnDrag = document.querySelector('.btnDrag');
+multiSliderContainer.addEventListener('mousemove', function (e) {
+  if (e.target.closest('.multi_swiper')) {
+    var target = e.target.closest('.multi_swiper');
+    var targetCoords = target.getBoundingClientRect();
+    var xCoord = e.clientX - targetCoords.left;
+    var yCoord = e.clientY - targetCoords.top;
+    cursorDrag.style.left = "".concat(xCoord - 35, "px");
+    cursorDrag.style.top = "".concat(yCoord - 18, "px");
+    cursorDrag.classList.add('swiper-button-drag--opas_mod_1');
+    btnDrag.classList.add('swiper-button-drag--disable');
+  }
+});
+multiSliderContainer.addEventListener('mouseout', function (e) {
+  cursorDrag.classList.remove('swiper-button-drag--opas_mod_1');
+  btnDrag.classList.remove('swiper-button-drag--disable');
+});
+
+/***/ }),
+
 /***/ "./src/js/components/multi_swiper.js":
 /*!*******************************************!*\
   !*** ./src/js/components/multi_swiper.js ***!
@@ -105,7 +136,7 @@ var multiSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.multi_swi
   slidesPerView: 1.27,
   slidesPerGroup: 1,
   modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
-  allowTouchMove: false,
+  allowTouchMove: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
@@ -120,18 +151,17 @@ var multiSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.multi_swi
   }
 });
 var dragBtn = document.querySelector('.swiper-button-drag');
-var multiSliderWrapper = document.querySelector('.multiSliderWrapper');
-dragBtn.addEventListener('click', function () {
-  if (dragBtn.classList.contains('dragBtn')) {
-    dragBtn.classList.remove('dragBtn');
-    multiSliderWrapper.classList.remove('section_dragble');
-    multiSlider.allowTouchMove = false;
-  } else {
-    dragBtn.classList.add('dragBtn');
-    multiSliderWrapper.classList.add('section_dragble');
-    multiSlider.allowTouchMove = true;
-  }
-});
+var multiSliderWrapper = document.querySelector('.multiSliderWrapper'); // dragBtn.addEventListener('click', () => {
+// 	if (dragBtn.classList.contains('dragBtn')) {
+// 		dragBtn.classList.remove('dragBtn');
+// 		multiSliderWrapper.classList.remove('section_dragble');
+// 		multiSlider.allowTouchMove = false;
+// 	} else {
+// 		dragBtn.classList.add('dragBtn');
+// 		multiSliderWrapper.classList.add('section_dragble');
+// 		multiSlider.allowTouchMove = true;
+// 	}
+// });
 
 /***/ }),
 

@@ -135,17 +135,3 @@
 	line-height: 2.4rem;
 	font-size: 1.4rem;
 }
-
-.section_dragble {
-
-	@include bp($point_2, min) {
-		&.multi_swiper_inner {
-			cursor: grab;
-		}
-
-		cursor: grab;
-		&:active {
-			cursor: grabbing;
-		}
-	}
-}

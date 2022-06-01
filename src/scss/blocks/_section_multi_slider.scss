@@ -1,5 +1,5 @@
-.multi_swiper_inner {
-	cursor: pointer;
+.multi_swiper {
+	position: relative;
 }
 
 .multi_slide {
@@ -11,20 +11,23 @@
 	height: inherit;
 	overflow: hidden;
 
-	cursor: inherit;
-
-	@include bp($point_2, min) {
-		&:hover {
-			text-decoration: none;
-			& .multi_slide_blur {
-				opacity: 1;
-				transform: scale(1.05);
-			}
-			& .multi_slide__photo {
-				transform: scale(1.05);
-			}
-		}
+	// cursor: grab;
+	cursor: none;
+	@include bp ($point_2) {
+		cursor: pointer;
 	}
+	// @include bp($point_2, min) {
+	// 	&:hover {
+	// 		text-decoration: none;
+	// 		& .multi_slide_blur {
+	// 			opacity: 1;
+	// 			transform: scale(1.05);
+	// 		}
+	// 		& .multi_slide__photo {
+	// 			transform: scale(1.05);
+	// 		}
+	// 	}
+	// }
 }
 
 .multi_slide__in {
