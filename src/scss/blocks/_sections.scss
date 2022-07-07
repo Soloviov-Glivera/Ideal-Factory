@@ -27,18 +27,14 @@
 //section elements
 
 .section_wrapper {
-	@extend %global_flex_block_row_nowrap_space_between_stretch;
 
-	position: relative;
-	
-	height: inherit;
 
 	@include bp($point_4) {
 		flex-direction: column-reverse;
 	}
 }
 
-.section_logo {
+.logo {
 	position: absolute;
 
 	width: 3.5rem;
@@ -63,7 +59,6 @@
 }
 
 .section_content {
-	@extend %global_flex_block_column_nowrap_flex-start;
 
 	@include bp($point_2, min) {
 		flex-basis: 66.66%;
@@ -78,60 +73,20 @@
 	}
 }
 
-.section_photo {
-	height: var(--full-screen);
+// .section_photo {
+// 	height: var(--full-screen);
 
-	@include bp($point_2, min) {
-		flex-basis: 33.33%;
-	}
+// 	@include bp($point_2, min) {
+// 		flex-basis: 33.33%;
+// 	}
 
-	@include bp($point_2) {
-		flex-basis: 50%;
-	}
+// 	@include bp($point_2) {
+// 		flex-basis: 50%;
+// 	}
 
-	@include bp($point_4) {
-		height: 50%;
-	}
-}
+// 	@include bp($point_4) {
+// 		height: 50%;
+// 	}
+// }
 
-.section_title {
-	@extend %global_flex_block_row_nowrap_flex-start;
-	
-	margin: auto 0;
-	font-weight: 500;
-	font-size: 6rem;
-	line-height: 7.4rem;
 
-	@include bp($point_2) {
-		text-align: center;
-	}
-
-	&.section_title--mod_size_1 { 
-		font-size: 5rem;
-		line-height: 6rem;
-	}
-	&.section_title--mod_size_2 { 
-		font-size: 4rem;
-		line-height: 5rem;
-	}
-
-}
-.section_title--mod_mark {
-	font-size: 1.4rem;
-	margin-top: auto;
-	line-height: 1.4rem;
-	margin-bottom: 6rem;
-}
-
-.section_descr_caption {
-	font-weight: 500;
-	font-size: 2.4rem;
-	line-height: 3.4rem;
-	color: #FFFFFF;
-	margin-bottom: 6rem;
-}
-
-.section_descr {
-	line-height: 2.4rem;
-	font-size: 1.4rem;
-}

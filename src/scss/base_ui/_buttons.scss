@@ -96,6 +96,10 @@
 	}
 
 	@include bp($point_2, min) {
+		&.swiper-button-prev {
+			margin-right: 8.2rem;
+		}
+
 		&:hover{
 			background-color: darken($white, 20%);
 		}
@@ -131,9 +135,6 @@
 	}
 	@include bp($point_2) {
 		display: none;
-	}
-	&.swiper-button-drag--opas_mod_1 {
-		opacity: 1;
 	}
 	&.swiper-button-drag--disable {
 		opacity: 0;
@@ -189,4 +190,8 @@
 		left: -100%;
 		opacity: 0;
 	}
+}
+
+.swiper-scrollbar-drag {
+	cursor: pointer;
 }

@@ -5,6 +5,7 @@ import {
 	documentReady,
 	pageLoad,
 	onWindowResize,
+	onWindowScroll,
 	calcViewportHeight,
 } from 'utils';
 import pageWidgetInit from './dev_vendors/dev_widget';
@@ -14,7 +15,10 @@ import pageWidgetInit from './dev_vendors/dev_widget';
 import multiSlider from './components/multi_swiper';
 import scrollbarSlider from './components/scrollbar_swiper';
 import singleSlider from './components/single_swiper';
-import scrollToNext from './components/scrollToNext';
+import {
+
+	hideScrollBtn,
+} from './components/scrollToNext';
 import cursor from './components/cursor';
 // ------------------  import components###
 
@@ -36,11 +40,12 @@ if (GLOBAL_VARS.projectDevStatus) {
 // -------------------  global variables
 
 const readyFunc = () => {
+	onWindowScroll(hideScrollBtn);
+	onWindowResize(calcViewportHeight);
 	console.log('ready');
 };
 
 const loadFunc = () => {
-	onWindowResize(calcViewportHeight);
 	console.log('page load');
 };
 

@@ -16,18 +16,17 @@
 	@include bp ($point_2) {
 		cursor: pointer;
 	}
-	// @include bp($point_2, min) {
-	// 	&:hover {
-	// 		text-decoration: none;
-	// 		& .multi_slide_blur {
-	// 			opacity: 1;
-	// 			transform: scale(1.05);
-	// 		}
-	// 		& .multi_slide__photo {
-	// 			transform: scale(1.05);
-	// 		}
-	// 	}
-	// }
+	@include bp($point_2, min) {
+		&:hover {
+			text-decoration: none;
+			.multi_slide__descr {
+				
+				height: 120px;
+				transform: scaleY(1);
+				max-width: 32rem;
+			}
+		}
+	}
 }
 
 .multi_slide__in {
@@ -35,21 +34,32 @@
 	@include bp($point_1, min) {
 		padding: 5rem;
 	}
+	
 	@include bp($point_1) {
 		padding: 2rem;
 	}
+}
 
-	& .section_title {
-		margin-bottom: 4rem;
+.multi_slide__title {
+	@extend %global_flex_block_row_nowrap_flex-start;
+	@extend %title_block_size_2;
 
-		color: $white;
-	}
+	margin-bottom: 4rem;
 
-	& .section_descr {
-		max-width: 32rem;
-		
-		color: $white;
-	}
+	color: $white;
+}
+
+.multi_slide__descr {
+	@extend %descr_block;
+	
+	height: 0;
+	transform: scaleY(0);
+	transform-origin: bottom;
+	max-width: 32rem;
+	
+	color: $white;
+
+	transition: .3s;
 }
 
 .multi_slide__photo {
@@ -61,20 +71,5 @@
 	width: 101%;
 	height: 100%;
 
-	transition: .3s ease-out;
-}
-
-.multi_slide_blur {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-
-	width: 101%;
-	height: 100%;
-
-	opacity: 0;
-	webkit-filter: blur(.5rem);
-	filter: blur(.5rem);
 	transition: .3s ease-out;
 }

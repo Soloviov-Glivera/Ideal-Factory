@@ -1,35 +1,68 @@
-.section_img_left__wrapper {
+.img_left_section__wrapper {
+	@extend %global_flex_block_row_nowrap_space_between_stretch;
+
+	position: relative;
+	
+	height: inherit;
 
 	@include bp($point_4) {
 		flex-direction: column;
 	}
 }
-.section_img_left__content {
+
+.img_left_section__content {
+	@extend %global_flex_block_column_nowrap_flex-start;
+
+	flex-basis: 66.66%;
 
 	@include bp($point_1, min) {
 		padding: 15rem 15rem 5rem 10rem;
 	}
+	
 	@include bp($point_1) {
 		padding: 5rem 5rem 2rem 5rem;
+	}
+
+	@include bp($point_2) {
+		flex-basis: 50%;
 	}
 
 	@include bp($point_4) {
 		align-items: center;
 	}
- 	
-	& .section_title {
-		margin-top: auto;
-		margin-bottom: 0;
-		@include bp($point_4, min) {
-			max-width: 46rem;
-		}
-	}
-	& .section_descr {
-		margin-top: auto;
+}
 
-		@include bp($point_4, min) {
-			max-width: 44rem;
-			margin-left: auto;
-		}
+.img_left_section__title {	
+	@extend %global_flex_block_row_nowrap_flex-start;
+
+	@extend %title_block;
+	
+	margin-top: auto;
+	margin-bottom: auto;
+
+	@include bp($point_4, min) {
+		max-width: 46rem;
 	}
+}
+
+.img_left_section__descr {
+	@extend %descr_block;
+
+	margin-top: auto;
+
+	@include bp($point_4, min) {
+		max-width: 44rem;
+		margin-left: auto;
+	}
+}
+
+.img_left_section__descr--mod_mark {
+	font-size: 1.4rem;
+	margin-top: auto;
+	line-height: 1.4rem;
+	margin-bottom: 6rem;
+}
+
+.img_left_section__photo {
+	@extend %photo_block;
 }

@@ -1,0 +1,36 @@
+@mixin title_block() {
+	margin: auto 0;
+	font-weight: 500;
+	font-size: 6rem;	
+	line-height: 7.4rem;
+
+	@include bp($point_2) {
+		text-align: center;
+	}
+}
+
+//color extends
+%title_block {
+ 	@include title_block();
+}
+
+%title_block_size_1 {
+	@include title_block();
+
+	font-size: 5rem;
+	line-height: 6rem;
+}
+
+%title_block_size_2 {
+	@include title_block();
+
+	font-size: 4rem;
+	line-height: 5rem;
+}
+
+// %title_block_color_1 {
+// 	color: $white;
+
+//  	@include title_block();
+// }
+

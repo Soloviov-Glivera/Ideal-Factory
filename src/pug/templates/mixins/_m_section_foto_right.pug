@@ -1,13 +1,17 @@
 mixin section_foto_right(array)
-	section.section 
+	section.section.img_right_section 
 		.section_in
 			each item in array
-				.section_wrapper 
-					.section_content.section_img_right__content
-						h2.section_title!= item.title
-						p.section_descr!= item.descr
-					.section_photo
-						img(src= item.img).cover_img
+				.img_right_section__wrapper
+					.img_right_section__content
+						h2.img_right_section__title!= item.title
+						if item.descr
+							p.img_right_section__descr!= item.descr
+					.img_right_section__photo
+						+picture({
+							img_class: 'cover_img',
+							img: `${item.img}`
+						}) 
 				if item.logo_mod 
-					a(href='#').section_logo(class = item.logo_mod)
+					a(href='#').logo(class = item.logo_mod)
 						+icon('logo', `icon--size_mod`)

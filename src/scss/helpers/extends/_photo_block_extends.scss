@@ -1,0 +1,20 @@
+@mixin photo_block() {
+	height: var(--full-screen);
+}
+
+//color extends
+%photo_block {
+	@include photo_block();
+	
+	@include bp($point_2, min) {
+		flex-basis: 33.33%;
+	}
+
+	@include bp($point_2) {
+		flex-basis: 50%;
+	}
+
+	@include bp($point_4) {
+		height: 50%;
+	}
+}

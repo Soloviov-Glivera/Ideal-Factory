@@ -1,20 +1,22 @@
-const multiSliderContainer = document.querySelector('.multiSliderWrapper');
-let cursorDrag = document.querySelector('.cursorDrag');
-let btnDrag = document.querySelector('.btnDrag');
-multiSliderContainer.addEventListener('mousemove', (e) => {
-	if (e.target.closest('.multi_swiper')) {
-		let target = e.target.closest('.multi_swiper');
-		let targetCoords = target.getBoundingClientRect();
-		let xCoord = e.clientX - targetCoords.left;
-		let yCoord = e.clientY - targetCoords.top;
-		cursorDrag.style.left = `${xCoord - 35}px`;
-		cursorDrag.style.top = `${yCoord - 18}px`;
-		cursorDrag.classList.add('swiper-button-drag--opas_mod_1');
-		btnDrag.classList.add('swiper-button-drag--disable');
+const multiSliderContainer = document.querySelectorAll('.multiSliderWrapper');
+let cursorDrag = document.querySelectorAll('.cursorDrag');
+if (multiSliderContainer[0] && cursorDrag[0]) {
+	let halfHeightCursor = cursorDrag[0].clientHeight / 2;
+	let halfWidthCursor = cursorDrag[0].clientWidth / 2;
+	for (let i = 0; i < multiSliderContainer.length; i += 1) {
+		multiSliderContainer[i].addEventListener('mousemove', (e) => {
+			if (e.target.closest('.multi_swiper')) {
+				const target = e.target.closest('.multi_swiper');
+				const targetCoords = target.getBoundingClientRect();
+				const xCoord = e.clientX - targetCoords.left;
+				const yCoord = e.clientY - targetCoords.top;
+				cursorDrag[i].style.left = `${xCoord - halfWidthCursor}px`;
+				cursorDrag[i].style.top = `${yCoord - halfHeightCursor}px`;
+				cursorDrag[i].style.opacity = 1;
+			}
+		});
+		multiSliderContainer[i].addEventListener('mouseout', (e) => {
+			cursorDrag[i].style.opacity = 0;
+		});
 	}
-});
-
-multiSliderContainer.addEventListener('mouseout', (e) => {
-	cursorDrag.classList.remove('swiper-button-drag--opas_mod_1');
-	btnDrag.classList.remove('swiper-button-drag--disable');
-});
+}

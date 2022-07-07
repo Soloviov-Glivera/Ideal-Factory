@@ -2,9 +2,12 @@ mixin section_foto_left(array)
 	section.section 
 		.section_in
 			each item in array
-				.section_wrapper.section_img_left__wrapper
-					.section_photo
-							img(src= item.img).cover_img
-					.section_content.section_img_left__content
-						h2.section_title!= item.title
-						p.section_descr!= item.descr
+				.img_left_section__wrapper
+					.img_left_section__photo
+						+picture({
+							img_class: 'cover_img',
+							img: `${item.img}`
+						}) 
+					.img_left_section__content
+						h2.img_left_section__title!= item.title
+						p.img_left_section__descr!= item.descr

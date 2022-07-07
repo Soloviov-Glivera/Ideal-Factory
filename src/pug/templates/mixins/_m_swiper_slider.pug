@@ -4,15 +4,14 @@ mixin swiper_slider(array)
 			.swiper-button-drag.cursorDrag Drag
 		.swiper-buttons-block
 			if array.btns_drag
-				.swiper-button-prev.arrow_multi_prev
+				button.swiper-button-prev.arrow_multi_prev
 					+icon('arrow_prev_multi_slider')
-				.swiper-button-drag.btnDrag Drag
-				.swiper-button-next.arrow_multi_next
+				button.swiper-button-next.arrow_multi_next
 					+icon('arrow_next_multi_slider')
 			if array.btns 
-				.swiper-button-prev.arrow_single_prev
+				button.swiper-button-prev.arrow_single_prev
 					+icon('arrow_prev_single_slider')
-				.swiper-button-next.arrow_single_prev
+				button.swiper-button-next.arrow_single_prev
 					+icon('arrow_next_single_slider')
 		.swiper-wrapper(class= array.slider_inner_class)
 			block

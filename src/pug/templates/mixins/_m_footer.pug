@@ -3,8 +3,8 @@ mixin footer(array)
 		.footer_inner 			
 			.footer_content
 				each item in array
-					.section_title.section_title--mod_size_2!= item.title 
-					p.section_descr!= item.descr
+					.footer_content__title!= item.title 
+					p.footer_content__descr!= item.descr
 			form.footer_form(action="")
 				+form_input({
 					block_class: 'footer_form__input',

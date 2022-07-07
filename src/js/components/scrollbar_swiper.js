@@ -4,10 +4,11 @@ import 'swiper/css';
 import 'swiper/css/scrollbar';
 import 'swiper/css/thumbs';
 
+Swiper.use([Scrollbar]);
+
 let scrollbarSlider = new Swiper('.scrollbar_swiper', {
 	slidesPerView: 'auto',
 	slidesPerGroup: 1,
-	modules: [Scrollbar],
 	scrollContainer: true,
 	scrollbar: {
 		el: '.swiper-scrollbar',

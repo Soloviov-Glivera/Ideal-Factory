@@ -1,4 +1,19 @@
-.section_img_right__content {
+.img_right_section__wrapper {
+	@extend %global_flex_block_row_nowrap_space_between_stretch;
+
+	position: relative;
+	
+	height: inherit;
+
+	@include bp($point_4) {
+		flex-direction: column-reverse;
+	}
+}
+
+.img_right_section__content {
+	@extend %global_flex_block_column_nowrap_flex-start;
+
+	flex-basis: 66.66%;
 
 	@include bp($point_1, min) {
 		padding: 5rem;
@@ -6,28 +21,45 @@
 	@include bp($point_1) {
 		padding: 2rem;
 	}
-		
+
+	@include bp($point_2) {
+		flex-basis: 50%;
+	}
+
 	@include bp($point_4) {
 		align-items: center;
 	}
+}
 
-	& .section_title {
-		@include bp($point_4, min) {
-			max-width: 74.6rem;
-		}
-		@include bp($point_4) {
-			max-width: 100%;
-		}
+.img_right_section__title {
+	@extend %global_flex_block_row_nowrap_flex-start;
+	
+	@extend %title_block;
+
+	@include bp($point_4, min) {
+		max-width: 74.6rem;
+	}
+	@include bp($point_4) {
+		max-width: 100%;
+	}
+}
+
+.img_right_section__descr {
+	@extend %descr_block;
+
+	@include bp($point_4, min) {
+		max-width: 46rem;
 	}
 
-	& .section_descr {
+	@include bp($point_4) {
+		max-width: 100%;
+	}
+}
 
-		@include bp($point_4, min) {
-			max-width: 46rem;
-		}
+.img_right_section__photo {
+	@extend %photo_block;
 
-		@include bp($point_4) {
-			max-width: 100%;
-		}
+	@include bp($point_2) {
+		flex-basis: 50%;
 	}
 }

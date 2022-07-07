@@ -1,27 +1,18 @@
-.section_img_center__wrapper {
+.img_center_section__wrapper {
+	@extend %global_flex_block_row_nowrap_space_between_stretch;
+
+	position: relative;
+	
+	height: inherit;
+
 	@include bp($point_2) {
 		flex-direction: column;
 	}
-
-	& .section_photo {
-		@include bp($point_2) {
-			height: 33.33%;
-		}
-	}
 }
 
-.section_img_center__caption {
-	font-size: 2.4rem;
-	line-height: 3.4rem;
-	font-weight: 500;
-	color: $white;
+.img_center_section__content {
+	@extend %global_flex_block_column_nowrap_flex-start;
 
-	@include bp($point_2) {
-		margin-top: auto;
-	}
-}
-
-.section_img_center__content {
 	justify-content: flex-end;
 	flex-basis: 33.33%;
 	
@@ -36,23 +27,45 @@
 	@include bp($point_2) {
 		height: 33.33%;
 	}
- 	& .section_descr {
-		color: $white;
-		@include bp($point_2) {
-			margin: auto auto;
-		}
+}
+
+.img_center_section__title {
+	@extend %title_block_size_1;
+
+	color: $white;
+	@include bp($point_2, min) {
+		max-width: 44rem;
 	}
 
-	& .section_title {
-		color: $white;
-		
-		@include bp($point_2, min) {
-			max-width: 44rem;
-		}
+	@include bp($point_2) {
+		max-width: 100%;
+		margin: auto auto;
+	}
+}
 
-		@include bp($point_2) {
-			max-width: 100%;
-			margin: auto auto;
-		}
+.img_center_section__descr {
+	@extend %descr_block_color_1;
+
+	@include bp($point_2) {
+		margin: auto auto;
+	}
+}
+
+.img_center_section__photo {
+	@extend %photo_block;
+
+	@include bp($point_2) {
+		height: 33.33%;
+	}
+}
+
+.img_center_section__caption {
+	font-size: 2.4rem;
+	line-height: 3.4rem;
+	font-weight: 500;
+	color: $white;
+
+	@include bp($point_2) {
+		margin-top: auto;
 	}
 }

@@ -4,6 +4,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 
+Swiper.use([Navigation, EffectFade]);
+
 let singleSlider = new Swiper('.single_swiper', {
 	slidesPerView: 1,
 	slidesPerGroup: 1,
@@ -12,7 +14,6 @@ let singleSlider = new Swiper('.single_swiper', {
 	fadeEffect: {
 		crossFade: true,
 	},
-	modules: [Navigation, EffectFade],
 	allowTouchMove: false,
 	navigation: {
 		nextEl: '.swiper-button-next',

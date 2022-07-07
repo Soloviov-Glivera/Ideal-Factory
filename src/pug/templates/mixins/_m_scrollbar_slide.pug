@@ -2,4 +2,7 @@ mixin scrollbar_slide(array)
 	each item in array
 		.swiper-slide.scrollbar_slide
 			.scrollbar_slide__photo
-				img(src= item.img).cover_img
+				+picture({
+					img_class: 'cover_img',
+					img: `${item.img}`
+				}) 

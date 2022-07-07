@@ -61,24 +61,27 @@
 		margin-bottom: 3rem;
 		max-width: 50rem;
 	}
+}
 
-	& .section_title {
-		width: 100%;
-		color: $white;
-		margin-right: 1rem;
+.footer_content__title {
+	@extend %title_block_size_2;
+
+	width: 100%;
+	color: $white;
+	margin-right: 1rem;
+}
+
+.footer_content__descr {
+	@extend %descr_block;
+
+	color: $white;
+
+	@include bp($point_2, min) {
+		margin-top: auto;
 	}
 
-	& .section_descr {
-	
-		color: $white;
-
-		@include bp($point_2, min) {
-			margin-top: auto;
-		}
-
-		@include bp($point_4) {
-			text-align: center;
-		}
+	@include bp($point_4) {
+		text-align: center;
 	}
 }
 

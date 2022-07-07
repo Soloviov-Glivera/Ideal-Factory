@@ -1,0 +1,15 @@
+@mixin descr_block() {
+	line-height: 2.4rem;
+	font-size: 1.4rem;
+}
+
+%descr_block {
+	
+ @include descr_block();
+}
+
+%descr_block_color_1 {
+	color: $white;
+
+	@include descr_block();
+}

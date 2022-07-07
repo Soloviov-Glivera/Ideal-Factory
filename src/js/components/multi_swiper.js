@@ -3,10 +3,11 @@ import Swiper, { Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+Swiper.use([Navigation]);
+
 let multiSlider = new Swiper('.multi_swiper', {
 	slidesPerView: 1.27,
 	slidesPerGroup: 1,
-	modules: [Navigation],
 	allowTouchMove: true,
 	navigation: {
 		nextEl: '.swiper-button-next',
